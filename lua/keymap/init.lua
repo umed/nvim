@@ -13,18 +13,12 @@ xmap({ ' ', '', opts(noremap) })
 
 -- usage example
 nmap({
-  -- noremal remap
-  -- close buffer
-  { '<C-x>k', cmd('bdelete'), opts(noremap, silent) },
   -- save
   { '<C-s>', cmd('write'), opts(noremap) },
   -- yank
   { 'Y', 'y$', opts(noremap) },
-  -- buffer jump
-  { ']b', cmd('bn'), opts(noremap) },
-  { '[b', cmd('bp'), opts(noremap) },
   -- remove trailing white space
-  { '<Leader>t', cmd('TrimTrailingWhitespace'), opts(noremap) },
+  -- { '<Leader>t', cmd('TrimTrailingWhitespace'), opts(noremap) },
   -- window jump
   { '<C-h>', '<C-w>h', opts(noremap) },
   { '<C-l>', '<C-w>l', opts(noremap) },
@@ -38,8 +32,17 @@ imap({
   { '<C-e>', '<End>', opts(noremap) },
 })
 
+-- buffers
+nmap({
+  { '<Leader>b', cmd('Telescope buffers'), opts(noremap, silent) },
+  { '<Leader>bc', cmd('bdelete'), opts(noremap, silent) },
+  { '<Leader>bn', cmd('bn'), opts(noremap) },
+  { '<Leader>bp', cmd('bp'), opts(noremap) },
+})
+
 -- commandline remap
 cmap({ '<C-b>', '<Left>', opts(noremap) })
+
 -- usage of plugins
 nmap({
   -- plugin manager: Lazy.nvim
@@ -51,8 +54,10 @@ nmap({
   { '<Leader>sl', cmd('SessionLoad'), opts(noremap, silent) },
   -- nvimtree
   { '<Leader>e', cmd('NvimTreeToggle'), opts(noremap, silent) },
+
   -- Telescope
-  { '<Leader>b', cmd('Telescope buffers'), opts(noremap, silent) },
   { '<Leader>fa', cmd('Telescope live_grep'), opts(noremap, silent) },
   { '<Leader>ff', cmd('Telescope find_files'), opts(noremap, silent) },
+  { '<Leader>fh', cmd('Telescope help_tags'), opts(noremap, silent) },
+  { '<Leader>fb', cmd('Telescope file_browser'), opts(noremap, silent) },
 })
