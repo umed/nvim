@@ -36,8 +36,8 @@ imap({
 nmap({
   { '<Leader>b', cmd('Telescope buffers'), opts(noremap, silent) },
   { '<Leader>bc', cmd('bdelete'), opts(noremap, silent) },
-  { '<Leader>bn', cmd('bn'), opts(noremap) },
-  { '<Leader>bp', cmd('bp'), opts(noremap) },
+  { 'bn', cmd('bn'), opts(noremap) },
+  { 'bp', cmd('bp'), opts(noremap) },
 })
 
 -- commandline remap
@@ -57,7 +57,14 @@ nmap({
 
   -- Telescope
   { '<Leader>fa', cmd('Telescope live_grep'), opts(noremap, silent) },
-  { '<Leader>ff', cmd('Telescope find_files'), opts(noremap, silent) },
+  { '<C-p>', cmd('Telescope find_files'), opts(noremap, silent) },
   { '<Leader>fh', cmd('Telescope help_tags'), opts(noremap, silent) },
   { '<Leader>fb', cmd('Telescope file_browser'), opts(noremap, silent) },
+})
+
+-- completion
+nmap({
+  { 'gd', cmd('Lspsaga goto_definition'), opts(noremap) },
+  { 'gr', cmd('Lspsaga rename'), opts(noremap) },
+  { 'gca', cmd('Lspsaga rename'), opts(noremap) },
 })

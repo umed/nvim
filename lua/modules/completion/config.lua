@@ -1,7 +1,28 @@
 local config = {}
 
+function _attach(client)
+  vim.opt.omnifunc = 'v:lua.vim.lsp.omnifunc'
+  client.server_capabilities.semanticTokensProvider = nil
+  local orignal = vim.notify
+  local mynotify = function(msg, level, opts)
+    if msg == 'No code actions available' or msg:find('overly') then
+      return
+    end
+    orignal(msg, level, opts)
+  end
+
+  vim.notify = mynotify
+end
+
+
 -- config server in this function
-function config.nvim_lsp() end
+function config.nvim_lsp()
+  lspconfig = require('lspconfig')
+
+  lspconfig.clangd.setup({
+    on_attach = _attach,
+  })
+end
 
 function config.nvim_cmp()
   local cmp = require('cmp')
