@@ -19,3 +19,11 @@ package({
     require('hlsearch').setup()
   end,
 })
+
+package({
+  'lewis6991/gitsigns.nvim',
+  event = 'BufRead',
+  config = function()
+    require('gitsigns').setup()
+  end,
+})

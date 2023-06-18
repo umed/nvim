@@ -64,4 +64,25 @@ function config.indent_blankline()
   })
 end
 
+function config.nvim_tree()
+  require('nvim-tree').setup({
+    disable_netrw = true,
+    hijack_netrw = true,
+    hijack_cursor = true,
+    view = {
+      adaptive_size = false,
+      side = "left",
+      width = 30,
+      preserve_window_proportions = true,
+    },
+    filesystem_watchers = {
+      enable = true,
+    },
+    update_focused_file = {
+      enable = true,
+      update_root = true,
+    },
+  })
+end
+
 return config

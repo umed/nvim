@@ -36,8 +36,8 @@ imap({
 nmap({
   { '<Leader>b', cmd('Telescope buffers'), opts(noremap, silent) },
   { '<Leader>bc', cmd('bdelete'), opts(noremap, silent) },
-  { 'bn', cmd('bn'), opts(noremap) },
-  { 'bp', cmd('bp'), opts(noremap) },
+  { '<leader>bn', cmd('bn'), opts(noremap) },
+  { '<leader>bp', cmd('bp'), opts(noremap) },
 })
 
 -- commandline remap

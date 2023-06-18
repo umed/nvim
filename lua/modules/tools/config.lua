@@ -7,6 +7,7 @@ function config.telescope()
         horizontal = { prompt_position = 'top', results_width = 0.6 },
         vertical = { mirror = false },
       },
+      file_ignore_patterns = { 'build' },
       sorting_strategy = 'ascending',
       file_previewer = require('telescope.previewers').vim_buffer_cat.new,
       grep_previewer = require('telescope.previewers').vim_buffer_vimgrep.new,
@@ -26,7 +27,7 @@ function config.telescope()
     },
   })
   require('telescope').load_extension('fzf')
-  require('telescope').load_extension('file_browser')
+  -- require('telescope').load_extension('file_browser')
 end
 
 return config
