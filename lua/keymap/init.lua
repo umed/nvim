@@ -30,12 +30,13 @@ imap({
   -- insert mode
   { '<C-h>', '<Bs>', opts(noremap) },
   { '<C-e>', '<End>', opts(noremap) },
+  { 'jk', '<esc>', opts(noremap) },
 })
 
 -- buffers
 nmap({
   { '<Leader>b', cmd('Telescope buffers'), opts(noremap, silent) },
-  { '<Leader>bc', cmd('bdelete'), opts(noremap, silent) },
+  { '<Leader>bc', cmd('bp<bar>sp<bar>bn<bar>bd<CR>'), opts(noremap, silent) },
   { '<leader>bn', cmd('bn'), opts(noremap) },
   { '<leader>bp', cmd('bp'), opts(noremap) },
 })
@@ -48,10 +49,12 @@ nmap({
   -- plugin manager: Lazy.nvim
   { '<Leader>pu', cmd('Lazy update'), opts(noremap, silent) },
   { '<Leader>pi', cmd('Lazy install'), opts(noremap, silent) },
+
   -- dashboard
   { '<Leader>n', cmd('DashboardNewFile'), opts(noremap, silent) },
   { '<Leader>ss', cmd('SessionSave'), opts(noremap, silent) },
   { '<Leader>sl', cmd('SessionLoad'), opts(noremap, silent) },
+
   -- nvimtree
   { '<Leader>e', cmd('NvimTreeToggle'), opts(noremap, silent) },
 
@@ -66,5 +69,6 @@ nmap({
 nmap({
   { 'gd', cmd('Lspsaga goto_definition'), opts(noremap) },
   { 'gr', cmd('Lspsaga rename'), opts(noremap) },
-  { 'gca', cmd('Lspsaga rename'), opts(noremap) },
+  { 'gca', cmd('Lspsaga code_action'), opts(noremap) },
+  { 'K', cmd('Lspsaga hover_doc ++keep'), opts(noremap) },
 })

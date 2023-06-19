@@ -43,6 +43,7 @@ function config.nvim_bufferline()
       modified_icon = '✥',
       buffer_close_icon = '',
       always_show_bufferline = false,
+      separator_style = 'slant',
     },
   })
 end
@@ -71,7 +72,7 @@ function config.nvim_tree()
     hijack_cursor = true,
     view = {
       adaptive_size = false,
-      side = "left",
+      side = 'right',
       width = 30,
       preserve_window_proportions = true,
     },

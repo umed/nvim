@@ -27,3 +27,11 @@ package({
     require('gitsigns').setup()
   end,
 })
+
+package({
+  'mhartington/formatter.nvim',
+  event = 'BufWritePre',
+  config = function()
+    require("formatter").setup()
+  end,
+})
