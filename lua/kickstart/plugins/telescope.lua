@@ -12,6 +12,7 @@ return {
     branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
+      'andrew-george/telescope-themes',
       { -- If encountering errors, see telescope-fzf-native README for installation instructions
         'nvim-telescope/telescope-fzf-native.nvim',
 
@@ -67,6 +68,62 @@ return {
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
+          },
+          themes = {
+            -- you can add regular telescope config
+            -- that you want to apply on this picker only
+            layout_config = {
+              horizontal = {
+                width = 0.8,
+                height = 0.7,
+              },
+            },
+
+            -- extension specific config
+
+            -- (boolean) -> show/hide previewer window
+            enable_previewer = true,
+
+            -- (boolean) -> enable/disable live preview
+            enable_live_preview = true,
+
+            -- all builtin themes are ignored by default
+            -- (list) -> provide table of theme names to overwrite builtins list
+            -- ignore = { 'default', 'desert', 'elflord', 'habamax' },
+            -- OR
+            -- extend the required `builtin_schemes` list to ignore other
+            -- schemes in addition to builtin schemes
+            -- ignore = vim.list_extend(builtin_schemes, { 'embark' }),
+
+            -- (table)
+            -- (boolean) ignore -> toggle ignore light themes
+            -- (list) keywords -> list of keywords that would identify as light theme
+            light_themes = {
+              ignore = true,
+              keywords = { 'light', 'day', 'frappe' },
+            },
+
+            -- (table)
+            -- (boolean) ignore -> toggle ignore dark themes
+            -- (list) keywords -> list of keywords that would identify as dark theme
+            dark_themes = {
+              ignore = false,
+              keywords = { 'dark', 'night', 'black' },
+            },
+
+            persist = {
+              -- enable persisting last theme choice
+              enabled = true,
+
+              -- override path to file that execute colorscheme command
+              -- path = vim.fn.stdpath 'config' .. '/lua/colorscheme.lua',
+            },
+            mappings = {
+              -- for people used to other mappings
+              down = '<C-n>',
+              up = '<C-p>',
+              accept = '<C-y>',
+            },
           },
         },
       }

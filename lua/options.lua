@@ -38,10 +38,16 @@ o.number = true
 o.relativenumber = true
 o.mouse = 'a'
 o.list = true
-o.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+o.listchars = {
+  tab = '▎ ',
+  trail = '·',
+  space = '·',
+  nbsp = '␣',
+}
 o.cursorline = true
 o.scrolloff = 10
 o.splitright = true
 o.splitbelow = true
+o.tabstop = 4
 
 -- vim: ts=2 sts=2 sw=2 et

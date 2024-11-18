@@ -54,4 +54,6 @@ map('x', '<leader>fs', '<CMD>Telescope grep_string<CR>', { desc = 'search for se
 map('n', 'cp', '<CMD>CopyRelPath<CR>', { desc = 'copy relative file path' })
 map('n', 'cfp', '<CMD>CopyFullPath<CR>', { desc = 'copy full file path' })
 
+map('n', '<leader>th', ':Telescope themes<CR>', { noremap = true, silent = true, desc = 'Theme Switcher' })
+
 -- vim: ts=2 sts=2 sw=2 et
