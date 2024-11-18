@@ -50,4 +50,13 @@ o.splitright = true
 o.splitbelow = true
 o.tabstop = 4
 
+vim.g.indent_blankline_context_patterns = {
+  'declaration',
+  'expression',
+  'pattern',
+  'primary_expression',
+  'statement',
+  'switch_body',
+}
+
 -- vim: ts=2 sts=2 sw=2 et
