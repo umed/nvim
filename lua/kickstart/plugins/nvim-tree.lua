@@ -8,7 +8,8 @@ local leftTree = {
     update_root = false,
   },
   view = {
-    width = 30,
+    side = 'right',
+    width = 40,
     preserve_window_proportions = true,
   },
   renderer = {
@@ -31,28 +32,28 @@ local leftTree = {
   },
 }
 
-local gwidth = vim.api.nvim_list_uis()[1].width
-local gheight = vim.api.nvim_list_uis()[1].height
-local width = 100
-local height = 20
-
-local floatingTree = {
-  view = {
-    width = width,
-    -- height = height,
-    float = {
-      enable = true,
-      open_win_config = {
-        relative = 'editor',
-        width = width,
-        height = height,
-        row = (gheight - height) * 0.4,
-        col = (gwidth - width) * 0.5,
-      },
-    },
-  },
-  update_focused_file = { enable = true },
-}
+-- local gwidth = vim.api.nvim_list_uis()[1].width
+-- local gheight = vim.api.nvim_list_uis()[1].height
+-- local width = 100
+-- local height = 20
+--
+-- local floatingTree = {
+--   view = {
+--     width = width,
+--     -- height = height,
+--     float = {
+--       enable = true,
+--       open_win_config = {
+--         relative = 'editor',
+--         width = width,
+--         height = height,
+--         row = (gheight - height) * 0.4,
+--         col = (gwidth - width) * 0.5,
+--       },
+--     },
+--   },
+--   update_focused_file = { enable = true },
+-- }
 
 return {
   'nvim-tree/nvim-tree.lua',
@@ -63,5 +64,5 @@ return {
   dependencies = {
     'nvim-tree/nvim-web-devicons',
   },
-  opts = floatingTree,
+  opts = leftTree,
 }
